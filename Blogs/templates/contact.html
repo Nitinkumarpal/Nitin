@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block title %}
+
+Contact us
+{% endblock title %}
+
+
+{% block body %}
+
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css.map'  %}">
+<link rel="stylesheet" href="{% static 'css/custom.css'  %}">
+
+
+<div class="formthree ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group"> <label class="sr-only">Name</label> <input type="text" class="form-control" name="name" required="" id="nameSix" placeholder="Your Name"> </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"> <label class="sr-only">Email</label> <input type="email" class="form-control" name="email" required="" id="emailSix" placeholder="Email Address"> </div>
+                        </div>
+                    </div>
+                    <!--end of /.row-->
+                    <div class="form-group"> <label class="sr-only">Message</label> <textarea class="form-control" name="comment" required="" rows="7" placeholder="Write Message"></textarea> </div> <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div> <!-- /.col-md-8 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div>
+{% endblock body %}

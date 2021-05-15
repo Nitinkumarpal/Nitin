@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block title %}
+
+Contact us
+{% endblock title %}
+
+
+{% block body %}
+
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css.map'  %}">
+<link rel="stylesheet" href="{% static 'css/custom.css'  %}">
+
+
+<div class="formthree ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group"> <label class="sr-only">Title</label> <input type="text" class="form-control" required="" name='title' id="nameSix" placeholder="Your Title"> </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"> <label class="sr-only">Slug</label> <input type="text" class="form-control" required=""name='slug' id="emailSix" placeholder="Slug"> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group"> <label class="sr-only">Auther</label> <input type="text" class="form-control" required="" name='auther' id="nameSix" placeholder="Auther"> </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"> <label class="sr-only">Status</label> <select class="form-control" name="status" required="" id="emailSix" placeholder="Status"> <option selected></option>
+                                <option value="0">Draft</option>
+                                <option value="1"> Publish</option></select> </div>
+                        </div>
+                    </div>
+                    <!--end of /.row-->
+                    <div class="form-group"> <label class="sr-only">Content</label> <textarea class="form-control" name="content" required="" rows="7" placeholder="Write Message"></textarea> </div> <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div> <!-- /.col-md-8 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div>
+{% endblock body %}

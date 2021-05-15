@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block title %}
+
+Signup
+{% endblock title %}
+
+
+{% block body %}
+
+
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css.map'  %}">
+<link rel="stylesheet" href="{% static 'css/custom.css'  %}">
+
+
+
+
+<div class="container">
+    <div class="frame">
+        
+        <div ng-app ng-init="checked = false">
+            <li class="signup-inactive"><a class="btn">Sign up </a></li><hr>
+
+            {% if messages %}
+            {% for message in messages %}
+                <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+                <form action="" method="post" novalidate>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="Submit" value="Submit" class="btn btn-primary my-3">
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                        <p class="alert alert-danger my-3">{{error}}</p>
+                        {% endfor %}
+                    {% endif %}
+                </form>
+   
+        </div>
+        
+    </div>
+</div>
+<br><br><br><br><br>
+
+
+
+{% endblock body %}
