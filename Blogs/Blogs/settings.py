@@ -28,7 +28,7 @@ SECRET_KEY = 'plxz*svt$9&t&-))svk2%zo8p6hz_97^$=d95@%b+y)up8y93@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','nitinblogs.herokuapp.com/']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # Application definition
